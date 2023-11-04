@@ -22,7 +22,7 @@ namespace Academy.Core.Models
             Password = password;
             Salary = salary;
             Age = age;
-            Id = $"{_id}";
+            Id = $"{_id}-D";
         }
     }
 }

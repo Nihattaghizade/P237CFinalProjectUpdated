@@ -25,7 +25,7 @@ namespace Academy.Core.Models
             Salary = salary;
             Age = age;
             EducationType = educationType;
-            Id = $"{EducationType.ToString()[0]}-{_id}";
+            Id = $"{EducationType.ToString()[0]}-{_id}-T";
         }
     }
 }

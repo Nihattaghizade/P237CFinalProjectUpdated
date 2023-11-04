@@ -12,8 +12,10 @@ namespace Academy.Core.Models
         public string Password { get; set; }
         public int Age { get; set; }
         public EducationType EducationType { get; set; }
+        public string Group { get; set; }
+        public double Average { get; set; }
 
-        public Student(string name,string surName,string userName,string password,int age,EducationType educationType)
+        public Student(string name,string surName, string userName, string password, int age, EducationType educationType, string group, double average)
         {
             _id++;
 
@@ -23,7 +25,10 @@ namespace Academy.Core.Models
             Password = password;
             Age = age;
             EducationType = educationType;
-            Id = $"{EducationType.ToString()[0]}-{_id}";
+            Id = $"{EducationType.ToString()[0]}-{_id}-S";
+            Group = group;
+            Average = average;
+
         }
     }
 }
