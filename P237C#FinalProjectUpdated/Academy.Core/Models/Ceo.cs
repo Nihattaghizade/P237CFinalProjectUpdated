@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Academy.Core.Models
+﻿namespace Academy.Core.Models
 {
-    internal class Ceo
+    public  class Ceo
     {
+        public string Name { get; } = "Nihat";
+        public string SurName { get; } = "Taghizade";
+        public string FullName => $"{Name} {SurName}";
+        public string Username { get; } = "Nihattt";
+        public string Password { get; } = "Nihat123";
+        
     }
 }

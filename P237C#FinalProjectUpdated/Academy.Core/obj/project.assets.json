@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\99450\\source\\repos\\P237C#FinalProjectUpdated\\Academy.Core\\Academy.Core.csproj",
+      "projectUniqueName": "C:\\Users\\99450\\OneDrive\\Masaüstü\\P237CFinalProjectUpdated\\P237C#FinalProjectUpdated\\Academy.Core\\Academy.Core.csproj",
       "projectName": "Academy.Core",
-      "projectPath": "C:\\Users\\99450\\source\\repos\\P237C#FinalProjectUpdated\\Academy.Core\\Academy.Core.csproj",
+      "projectPath": "C:\\Users\\99450\\OneDrive\\Masaüstü\\P237CFinalProjectUpdated\\P237C#FinalProjectUpdated\\Academy.Core\\Academy.Core.csproj",
       "packagesPath": "C:\\Users\\99450\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\99450\\source\\repos\\P237C#FinalProjectUpdated\\Academy.Core\\obj\\",
+      "outputPath": "C:\\Users\\99450\\OneDrive\\Masaüstü\\P237CFinalProjectUpdated\\P237C#FinalProjectUpdated\\Academy.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\99450\\AppData\\Roaming\\NuGet\\NuGet.Config",
