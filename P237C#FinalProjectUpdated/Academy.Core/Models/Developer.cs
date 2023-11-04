@@ -1,12 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Academy.Core.Models.BaseModels;
 
 namespace Academy.Core.Models
 {
-    internal class Developer
+    public class Developer : BaseModel
     {
+        static int _id;
+        public string Name { get; set; }
+        public string SurName { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public double Salary { get; set; }
+        public int Age { get; set; }
+
+        public Developer(string name,string surName,string userName,string password,double salary,int age)
+        {
+            _id++;
+
+            Name = name;
+            SurName = surName;
+            Username = userName;
+            Password = password;
+            Salary = salary;
+            Age = age;
+            Id = $"{_id}";
+        }
     }
 }
