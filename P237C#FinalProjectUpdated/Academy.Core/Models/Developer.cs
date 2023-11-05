@@ -5,10 +5,6 @@ namespace Academy.Core.Models
     public class Developer : BaseModel
     {
         static int _id;
-        public string Name { get; set; }
-        public string SurName { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
         public double Salary { get; set; }
         public int Age { get; set; }
 

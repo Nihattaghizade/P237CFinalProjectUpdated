@@ -1,6 +1,6 @@
 ﻿namespace Academy.Core.Models
 {
-    public abstract  class Ceo
+    public abstract  class Ceo 
     {
         public string Name { get; } = "Nihat";
         public string SurName { get; } = "Taghizade";
