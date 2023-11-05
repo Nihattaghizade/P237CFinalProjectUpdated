@@ -7,27 +7,27 @@ namespace Academy.Service.Services.Implementations
     public class DeveloperService : IDeveloperService
     {
         IDeveloperRepository _developerRepository = new DeveloperRepository();
-        public Task<string> CreateAsync(string name, string surName, string userName, string password, double salary, int age)
+        public async Task<string> CreateAsync(string name, string surName, string userName, string password, double salary, int age)
         {
             throw new NotImplementedException();
         }
 
-        public Task GetAllAsync()
+        public async Task GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> GetAsync(string id)
+        public async Task<string> GetAsync(string id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> RemoveAsync(string id)
+        public async Task<string> RemoveAsync(string id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> UpdateAsync(string id, string name, string surName, string userName, string password, double salary, int age)
+        public async Task<string> UpdateAsync(string id, string name, string surName, string userName, string password, double salary, int age)
         {
             throw new NotImplementedException();
         }
