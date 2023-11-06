@@ -6,9 +6,15 @@ using Academy.Service.Services.Interfaces;
 
 namespace Academy.Service.Services.Implementations
 {
-    public class TeacherService : ITeacherService
+    public class TeacherService : ITeacherService, IUserService
     {
+        bool IsLogin = false;
         ITeacherRepository _teacherRepository= new TeacherRepository();
+
+        public async Task<bool> Authenticated()
+        {
+            return IsLogin;
+        }
 
         public async Task<string> CreateAsync(string name, string surName, string userName, string password, double salary, int age, EducationType educationType)
         {
@@ -40,14 +46,16 @@ namespace Academy.Service.Services.Implementations
             }
         }
 
-        public async Task<string> GetAsync(string id)
+        public async Task GetAsync(string id)
         {
             Teacher teacher = await _teacherRepository.GetAsync(x => x.Id == id);
             if (teacher == null)
-                return "Teacher not found";
+                //return "Teacher not found";
+                Console.WriteLine("Teacher not found");
 
             Console.WriteLine($"Id: {teacher.Id} Name: {teacher.Name} Surname: {teacher.SurName} Username: {teacher.Username} Password: {teacher.Password} Salary:{teacher.Salary} Age: {teacher.Age} Educationtype: {teacher.EducationType} CreatedAt: {teacher.CreatedAt} UpdatedAt: {teacher.UpdatedAt}");
-            return "Success";
+            //return "Success";
+            Console.WriteLine("Success");
         }
 
         public async Task<string> RemoveAsync(string id)
@@ -58,6 +66,36 @@ namespace Academy.Service.Services.Implementations
 
             await _teacherRepository.RemoveAsync(teacher);
             return "Removed successfully";
+        }
+
+        public async Task SignIn()
+        {
+            Console.WriteLine("Add username");
+            string Username = Console.ReadLine();
+            Console.WriteLine("Add password");
+            string Password = Console.ReadLine();
+            Teacher teacher = await _teacherRepository.GetAsync(teacher => teacher.Username == Username && teacher.Password == Password);
+
+            if (teacher == null)
+            {
+                //throw new Exception("Username or password is incorrect");
+                //return "Username or password is incorrect";
+                Console.WriteLine("Username or password is incorrect");
+            }
+            else
+            {
+                IsLogin = true;
+            }
+            Console.WriteLine("Signed in successfully");
+        }
+
+        public async Task SignOut()
+        {
+            if (IsLogin == true)
+            {
+                IsLogin = false;
+            }
+            Console.WriteLine("Signed out successfully");
         }
 
         public async Task<string> UpdateAsync(string id, string name, string surName, string userName, string password, double salary, int age, EducationType educationType)

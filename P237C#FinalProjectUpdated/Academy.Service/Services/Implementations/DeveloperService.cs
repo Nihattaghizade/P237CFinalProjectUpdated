@@ -6,9 +6,16 @@ using Academy.Service.Services.Interfaces;
 
 namespace Academy.Service.Services.Implementations
 {
-    public class DeveloperService : IDeveloperService
+    public class DeveloperService : IDeveloperService, IUserService
     {
+        bool IsLogin = false;
         IDeveloperRepository _developerRepository = new DeveloperRepository();
+
+        public async Task<bool> Authenticated()
+        {
+            return IsLogin;
+        }
+
         public async Task<string> CreateAsync(string name, string surName, string userName, string password, double salary, int age)
         {
             if(string.IsNullOrWhiteSpace(name))
@@ -57,6 +64,36 @@ namespace Academy.Service.Services.Implementations
 
             await _developerRepository.RemoveAsync(developer);
             return "Removed successfully";
+        }
+
+        public async Task SignIn()
+        {
+            Console.WriteLine("Add username");
+            string Username = Console.ReadLine();
+            Console.WriteLine("Add password");
+            string Password = Console.ReadLine();
+            Developer developer = await _developerRepository.GetAsync(developer => developer.Username == Username && developer.Password == Password);
+
+            if (developer == null)
+            {
+                //throw new Exception("Username or password is incorrect");
+                //return "Username or password is incorrect";
+                Console.WriteLine("Username or password is incorrect");
+            }
+            else
+            {
+                IsLogin = true;
+            }
+            Console.WriteLine("Signed in successfully");
+        }
+
+        public async Task SignOut()
+        {
+            if (IsLogin == true)
+            {
+                IsLogin = false;
+            }
+            Console.WriteLine("Signed out successfully");
         }
 
         public async Task<string> UpdateAsync(string id, string name, string surName, string userName, string password, double salary, int age)
